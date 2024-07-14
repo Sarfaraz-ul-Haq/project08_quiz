@@ -1,17 +1,17 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 
-const answers = await inquirer.prompt([
+const questions = await inquirer.prompt([
   {
-    name: "q1",
+    name: "ans1",
     type: "list",
     choices: ["Angular", "React", "Vuejs", "Vanilla JavaScript"],
     message: chalk.green(
-      "Next.js is a framework built on top of which library?"
+      `\nNext.js is a framework built on top of which library?`
     ),
   },
   {
-    name: "q2",
+    name: "ans2",
     type: "list",
     choices: [
       "Extensive built-in component library",
@@ -20,27 +20,27 @@ const answers = await inquirer.prompt([
       "Faster development process compared to server-side rendering from scratch",
     ],
     message: chalk.green(
-      "What is one of the primary benefits of using Next.js for building web applications?  "
+      `\nWhat is one of the primary benefits of using Next.js for building web applications?`
     ),
   },
   {
-    name: "q3",
+    name: "ans3",
     type: "list",
     choices: ["next/link", "next/script", "next/image", "next/head"],
     message: chalk.green(
-      "Which of the following Next.js components helps optimize images in your application? "
+      `\nWhich of the following Next.js components helps optimize images in your application?`
     ),
   },
   {
-    name: "q4",
+    name: "ans4",
     type: "list",
     choices: ["True", "False"],
     message: chalk.green(
-      "Next.js applications can be statically generated, meaning the HTML is pre-rendered at build time for faster initial page loads"
+      `\nNext.js applications can be statically generated, meaning the HTML is pre-rendered at build time for faster initial page loads`
     ),
   },
   {
-    name: "q5",
+    name: "ans5",
     type: "list",
     choices: [
       "Manage state within a component",
@@ -49,11 +49,11 @@ const answers = await inquirer.prompt([
       "Handle server-side rendering logic for every request",
     ],
     message: chalk.green(
-      "What is the purpose of the getStaticProps function in Nextj.s?"
+      `\nWhat is the purpose of the getStaticProps function in Nextj.s?`
     ),
   },
   {
-    name: "q6",
+    name: "ans6",
     type: "list",
     choices: [
       "Static generation pre-renders all pages, while SSR renders on each request",
@@ -62,11 +62,11 @@ const answers = await inquirer.prompt([
       "They are the same thing with different names",
     ],
     message: chalk.green(
-      "What is the difference between static generation and server-side rendering (SSR) in Next.js? "
+      `\nWhat is the difference between static generation and server-side rendering (SSR) in Next.js?`
     ),
   },
   {
-    name: "q7",
+    name: "ans7",
     type: "list",
     choices: [
       "Required for all Nextjs projects to ensure type safety",
@@ -75,11 +75,11 @@ const answers = await inquirer.prompt([
       "Only works with specific libraries and frameworks",
     ],
     message: chalk.green(
-      "Which statement best describes the use of TypeScript with Next.js?"
+      `\nWhich statement best describes the use of TypeScript with Next.js?`
     ),
   },
   {
-    name: "q8",
+    name: "ans8",
     type: "list",
     choices: [
       "Creating a file named 404js in the root pages directory",
@@ -88,11 +88,11 @@ const answers = await inquirer.prompt([
       "Modifying the _appjs file to handle 404 errors",
     ],
     message: chalk.green(
-      "Which of the following is NOT a valid way to create a custom 404 page in Next.js?    "
+      `\nWhich of the following is NOT a valid way to create a custom 404 page in Next.js?`
     ),
   },
   {
-    name: "q9",
+    name: "ans9",
     type: "list",
     choices: [
       "Client-side Data Fetching (useEffect): Fetches data after the initial render in the browser, suitable for user-specific content updates",
@@ -101,11 +101,11 @@ const answers = await inquirer.prompt([
       "Incremental Static Regeneration (ISR): Revalidates statically generated pages at regular intervals, perfect for data feeds that change occasionally",
     ],
     message: chalk.green(
-      "Which of the following options accurately describes a data fetching strategy in Next.js and its ideal use case?"
+      `\nWhich of the following options accurately describes a data fetching strategy in Next.js and its ideal use case?`
     ),
   },
   {
-    name: "q10",
+    name: "ans10",
     type: "list",
     choices: [
       "Improved SEO and initial page load performance",
@@ -114,7 +114,16 @@ const answers = await inquirer.prompt([
       "Provides a complete framework that replaces React",
     ],
     message: chalk.green(
-      "What are some advantages of using Next.js compared to vanilla React when building web applications?"
+      `\nWhat are some advantages of using Next.js compared to vanilla React when building web applications?`
     ),
   },
 ]);
+
+const { ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8, ans9, ans10 } =
+  questions;
+
+if (ans1 === "React") {
+  console.log("CORRECT");
+} else {
+  console.log("WRONG");
+}
